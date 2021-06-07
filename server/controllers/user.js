@@ -15,7 +15,7 @@ export const signin = async (req, res) => {
       existingUser.password
     );
     if (!isPasswordCorrect)
-      return res.status(400).jston({ message: "password is incorrect" });
+      return res.status(400).json({ message: "password is incorrect" });
 
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
